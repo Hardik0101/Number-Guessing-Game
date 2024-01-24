@@ -1,17 +1,30 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, ImageBackground, View } from "react-native";
 import StartGameScreen from "./screens/StartGameScreen";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
   return (
-    <View style={styles.rootContainer}>
-      <StartGameScreen />
-    </View>
+    <LinearGradient
+      colors={["#4c669f", "#ddb52f"]}
+      style={styles.rootContainer}
+    >
+      <ImageBackground
+        source={require("./assets/images/background.jpg")}
+        resizeMode="cover"
+        style={styles.rootContainer}
+        imageStyle={styles.backgroundImage}
+      >
+        <StartGameScreen />
+      </ImageBackground>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
-    backgroundColor: "yellow",
+  },
+  backgroundImage: {
+    opacity: 0.15,
   },
 });
