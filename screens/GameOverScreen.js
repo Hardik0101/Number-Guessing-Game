@@ -9,3 +9,5 @@ function GameOverScreen() {
 }
 
 export default GameOverScreen;
+
+const styles = StyleSheet.create({});

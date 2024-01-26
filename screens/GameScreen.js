@@ -3,6 +3,9 @@ import Title from "../components/ui/Title";
 import { useEffect, useState } from "react";
 import NumberConatiner from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
+import Card from "../components/ui/Card";
+import Instruction from "../components/ui/Instruction";
+import { Ionicons } from "@expo/vector-icons";
 
 function generateRandomBetween(min, max, exlcude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -54,21 +57,21 @@ function GameScreen({ userNumber, onGameOver }) {
     <View style={styles.screen}>
       <Title>Opponent's Guess </Title>
       <NumberConatiner>{currentGuess}</NumberConatiner>
-      <View>
-        <Text>Higer or Lover? </Text>
+      <Card>
+        <Instruction style={styles.instruction}>Higer or Lover?</Instruction>
         <View style={styles.buttons}>
           <View style={styles.button}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              -
+              <Ionicons name="remove-sharp" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.button}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              +
+              <Ionicons name="add" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
-      </View>
+      </Card>
     </View>
   );
 }
@@ -85,5 +88,8 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
+  },
+  instruction: {
+    marginBottom: 16,
   },
 });
