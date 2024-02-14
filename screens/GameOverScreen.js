@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   imageContainer: {
+    //const deviceWidth=Dimensions.get('window').width use it
     // width: deviceWidth < 380 ? 150 : 300,
     // height: deviceWidth < 380 ? 150 : 300,
     // borderRadius: deviceWidth < 380 ? 75 : 150,
